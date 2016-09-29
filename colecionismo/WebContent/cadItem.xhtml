@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+
+<ui:composition template="resources/template/template.xhtml">
+	
+	<ui:define name="title">
+	    Item
+	    
+	</ui:define>
+	
+	<ui:define name="content">
+		
+		<h:form>
+			
+			<h:inputText value="#{itemControlador.item.nome}" />
+			
+			<h:commandButton value="salvar" >
+				<f:ajax execute="@form" render="@form" event="click" listener="#{itemControlador.salvar}" />
+			</h:commandButton>
+			
+		</h:form>
+	    
+	</ui:define>
+	
+</ui:composition>
+</html>
